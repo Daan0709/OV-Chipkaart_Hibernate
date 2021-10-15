@@ -1,4 +1,4 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -25,6 +25,14 @@ public class OVChipkaart {
     private List<Product> producten = new ArrayList<>();
 
     public OVChipkaart(){}
+
+    public OVChipkaart(int kaartnummer, Date verloopdatum, int klasse, double saldo, Reiziger reiziger) {
+        this.kaartnummer = kaartnummer;
+        this.verloopdatum = verloopdatum;
+        this.klasse = klasse;
+        this.saldo = saldo;
+        this.reiziger = reiziger;
+    }
 
     public int getKaartnummer() {
         return kaartnummer;

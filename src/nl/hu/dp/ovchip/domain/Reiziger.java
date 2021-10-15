@@ -1,4 +1,6 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
+
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -16,9 +18,11 @@ public class Reiziger {
     private Date geboortedatum;
 
     @OneToOne(mappedBy = "reiziger")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Adres adres;
 
     @OneToMany(mappedBy = "reiziger")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<OVChipkaart> OVChipkaarten = new ArrayList<>();
 
     public Reiziger(){

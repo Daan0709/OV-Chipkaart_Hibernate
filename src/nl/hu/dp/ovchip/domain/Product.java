@@ -1,4 +1,4 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;

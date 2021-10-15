@@ -1,4 +1,6 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
+
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
@@ -67,10 +69,10 @@ public class Adres {
     }
 
     public String toString(){
-        String reiziger = "";
+        String reiziger = "-";
         if (this.reiziger != null){
-            reiziger += this.reiziger.getId();
+            reiziger = this.reiziger.getNaam();
         }
-        return String.format("#%s %s-%s", reiziger, postcode, huisnummer);
+        return String.format("%s %s-%s", reiziger, postcode, huisnummer);
     }
 }
